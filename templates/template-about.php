@@ -14,14 +14,6 @@
 <!-- /.breadcrumbs -->
 
 
-	<div class="search_overlay">
-		<i class="fas fa-times close_button"></i>
-		<div class="search_input">
-			<input type="text" name="" placeholder="Search...">
-		</div>
-	</div>
-	<!-- /#search_nav -->
-
   <!--About Section-->
 
   <section class="get_to_know_us">
@@ -87,63 +79,63 @@
     <div class="services_item">
 
       <?php if(get_post_meta('18', 'ale_file_upload_service_icon_1', true)){ ?>
-      <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_1', true)); ?>" alt="Services">
+        <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_1', true)); ?>" alt="Services">
       <?php } ?>
 
       <?php if(get_post_meta('18', 'ale_service_icon_title_1', true)){ ?>
-      <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_1', true)); ?></p>
+        <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_1', true)); ?></p>
       <?php } ?>
     </div>
 
     <div class="services_item">
 
       <?php if(get_post_meta('18', 'ale_file_upload_service_icon_2', true)){ ?>
-      <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_2', true)); ?>" alt="Services">
+        <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_2', true)); ?>" alt="Services">
       <?php } ?>
 
       <?php if(get_post_meta('18', 'ale_service_icon_title_2', true)){ ?>
-      <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_2', true)); ?></p>
+        <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_2', true)); ?></p>
       <?php } ?>
     </div>
     <div class="services_item">
 
       <?php if(get_post_meta('18', 'ale_file_upload_service_icon_3', true)){ ?>
-      <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_3', true)); ?>" alt="Services">
+        <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_3', true)); ?>" alt="Services">
       <?php } ?>
 
       <?php if(get_post_meta('18', 'ale_service_icon_title_3', true)){ ?>
-      <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_3', true)); ?></p>
+        <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_3', true)); ?></p>
       <?php } ?>
     </div>
 
     <div class="services_item">
 
       <?php if(get_post_meta('18', 'ale_file_upload_service_icon_4', true)){ ?>
-      <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_4', true)); ?>" alt="Services">
+        <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_4', true)); ?>" alt="Services">
       <?php } ?>
 
       <?php if(get_post_meta('18', 'ale_service_icon_title_4', true)){ ?>
-      <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_4', true)); ?></p>
+        <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_4', true)); ?></p>
       <?php } ?>
     </div>
     <div class="services_item">
 
       <?php if(get_post_meta('18', 'ale_file_upload_service_icon_5', true)){ ?>
-      <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_5', true)); ?>" alt="Services">
+        <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_5', true)); ?>" alt="Services">
       <?php } ?>
 
       <?php if(get_post_meta('18', 'ale_service_icon_title_5', true)){ ?>
-      <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_5', true)); ?></p>
+        <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_5', true)); ?></p>
       <?php } ?>
     </div>
     <div class="services_item">
 
       <?php if(get_post_meta('18', 'ale_file_upload_service_icon_6', true)){ ?>
-      <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_6', true)); ?>" alt="Services">
+        <img src="<?php echo esc_attr(get_post_meta('18', 'ale_file_upload_service_icon_6', true)); ?>" alt="Services">
       <?php } ?>
 
       <?php if(get_post_meta('18', 'ale_service_icon_title_6', true)){ ?>
-      <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_6', true)); ?></p>
+        <p><?php echo esc_attr(get_post_meta('18', 'ale_service_icon_title_6', true)); ?></p>
       <?php } ?>
     </div>
   </div>
@@ -155,49 +147,85 @@
 <section class="about_introduction">
   <div class="about_introduction_wrapper">
     <div class="vertical_slider">
-      <div class="image_holder">
-        <img src="img/0436_1083_447_f.jpg" alt="Jeans">
-      </div>
 
+      <?php
+        $args = array(
+        'post_type'   => 'slider',
+        'suppress_filters' => true
+      );
+      $myposts = get_posts( $args );
+      foreach( $myposts as $post ){ setup_postdata($post);
+      ?>
       <div class="image_holder">
-        <img src="img/0436_1083_447_of.jpg" alt="Jeans">
+        <?php the_post_thumbnail(); ?>
       </div>
-
-      <div class="image_holder">
-        <img src="img/0166352461_1_1_3.jpg" alt="Jeans">
-      </div>
-
-    </div>
-    <div class="slider_info">
-      <div class="slider_info_inner">
-        <img src="img/gear.png" class="animated infinite pulse" alt="about">
-          <h6>Highest Quality</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, cumque sed repellendus?</p>
-      </div>
-    
-      <div class="slider_info_inner">
-        <img src="img/famous.png" class="animated infinite pulse" alt="about">
-          <h6>Famous Brands</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, cumque sed repellendus?</p>
-      </div>
+      <?php  
+      }
+        wp_reset_postdata();
+      ?>
     </div>
 
     <div class="slider_info">
 
       <div class="slider_info_inner">
-        <img src="img/charity.png" class="animated infinite pulse" alt="about">
-          <h6>Satisfied Customers</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, cumque sed repellendus?</p>
+      	<?php if(get_post_meta($post->ID, 'ale_file_upload_about_icon_1', true)){ ?>
+          <img src="<?php echo esc_attr(get_post_meta($post->ID, 'ale_file_upload_about_icon_1', true)); ?>" class="animated infinite pulse" alt="about">
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_title_1', true)){ ?>
+          <h6><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_title_1', true)); ?></h6>
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_description_1', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_description_1', true)); ?></p>
+        <?php } ?>
       </div>
     
       <div class="slider_info_inner">
-        <img src="img/sales.png" class="animated infinite pulse" alt="about">
-          <h6>Exclusive Offers</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, cumque sed repellendus?</p>
-      </div>
+      	<?php if(get_post_meta($post->ID, 'ale_file_upload_about_icon_2', true)){ ?>
+          <img src="<?php echo esc_attr(get_post_meta($post->ID, 'ale_file_upload_about_icon_2', true)); ?>" class="animated infinite pulse" alt="about">
+        <?php } ?>
 
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_title_2', true)){ ?>
+          <h6><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_title_2', true)); ?></h6>
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_description_2', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_description_2', true)); ?></p>
+        <?php } ?>
+      </div>
     </div>
 
+    <div class="slider_info">
+
+      <div class="slider_info_inner">
+      	<?php if(get_post_meta($post->ID, 'ale_file_upload_about_icon_3', true)){ ?>
+          <img src="<?php echo esc_attr(get_post_meta($post->ID, 'ale_file_upload_about_icon_3', true)); ?>" class="animated infinite pulse" alt="about">
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_title_3', true)){ ?>
+          <h6><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_title_3', true)); ?></h6>
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_description_3', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_description_3', true)); ?></p>
+        <?php } ?>
+      </div>
+    
+      <div class="slider_info_inner">
+      	<?php if(get_post_meta($post->ID, 'ale_file_upload_about_icon_4', true)){ ?>
+          <img src="<?php echo esc_attr(get_post_meta($post->ID, 'ale_file_upload_about_icon_4', true)); ?>" class="animated infinite pulse" alt="about">
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_title_4', true)){ ?>
+          <h6><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_title_4', true)); ?></h6>
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_icon_about_description_4', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_about_description_4', true)); ?></p>
+        <?php } ?>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -205,21 +233,45 @@
 
   <section class="counter">
     <div class="counter_wrapper">
+
       <div class="count">
-      <h2 class="count_number">125</h2>
-      <p>Items of wine</p>
+        <?php if(get_post_meta($post->ID, 'ale_counter_value_1', true)){ ?>
+          <h2 class="count_number"><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_value_1', true)); ?></h2>
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_counter_title_1', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_title_1', true)); ?></p>
+        <?php } ?>
       </div>
+
       <div class="count">
-      <h2 class="count_number">854</h2>
-      <p>Bottles of wine</p>
+      	<?php if(get_post_meta($post->ID, 'ale_counter_value_2', true)){ ?>
+          <h2 class="count_number"><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_value_2', true)); ?></h2>
+        <?php } ?>
+      
+        <?php if(get_post_meta($post->ID, 'ale_counter_title_2', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_title_2', true)); ?></p>
+        <?php } ?>
       </div>
+
       <div class="count">
-      <h2 class="count_number">5416</h2>
-      <p>Litres of wine</p>
+      	<?php if(get_post_meta($post->ID, 'ale_counter_value_3', true)){ ?>
+          <h2 class="count_number"><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_value_3', true)); ?></h2>
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_counter_title_3', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_title_3', true)); ?></p>
+        <?php } ?>
       </div>
+
       <div class="count">
-      <h2 class="count_number">7525</h2>
-      <p>Happy customer</p>
+      	<?php if(get_post_meta($post->ID, 'ale_counter_value_4', true)){ ?>
+          <h2 class="count_number"><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_value_4', true)); ?></h2>
+        <?php } ?>
+
+        <?php if(get_post_meta($post->ID, 'ale_counter_title_4', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_counter_title_4', true)); ?></p>
+        <?php } ?>
       </div>
     </div>
   </section>
@@ -230,8 +282,15 @@
 
   <section class="discover_store">
     <div class="discover_store_wrapper">
-      <h3>Frequently asked questions</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, rem unde aliquid itaque culpa eveniet ducimus, amet possimus tenetur ratione quo hic nam sit assumenda fuga reprehenderit officia ipsum deserunt!</p>
+
+      <?php if(get_post_meta($post->ID, 'ale_faq_title', true)){ ?>
+        <h3><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_title', true)); ?></h3>
+      <?php } ?>
+
+      <?php if(get_post_meta($post->ID, 'ale_faq_description', true)){ ?>
+        <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_description', true)); ?></p>
+      <?php } ?>
+
     </div>
   </section>
   <!-- /.discover_store -->
@@ -241,44 +300,78 @@
   <section class="faq">
     <div class="faq_wrapper">
       <div class="accordion">
-        <h5><a href="#">General</a></h5>
-        <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
-        </div>
+
+      	<?php if(get_post_meta($post->ID, 'ale_faq_question_1', true)){ ?>
+          <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_1', true)); ?></a></h5>
+        <?php } ?>
+      <div class="inner">
+
+        <?php if(get_post_meta($post->ID, 'ale_faq_answer_1', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_1', true)); ?></p>
+        <?php } ?>
+      </div>
   
-        <h5><a href="#">Advanced</a></h5>
+        <?php if(get_post_meta($post->ID, 'ale_faq_question_2', true)){ ?>
+          <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_2', true)); ?></a></h5>
+        <?php } ?>
         <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
+        <?php if(get_post_meta($post->ID, 'ale_faq_answer_2', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_2', true)); ?></p>
+        <?php } ?>
         </div>
 
-        <h5><a href="#">General</a></h5>
+        <?php if(get_post_meta($post->ID, 'ale_faq_question_3', true)){ ?>
+          <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_3', true)); ?></a></h5>
+        <?php } ?>
         <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
+        <?php if(get_post_meta($post->ID, 'ale_faq_answer_3', true)){ ?>
+          <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_3', true)); ?></p>
+        <?php } ?>
         </div>
 
-        <h5><a href="#">General</a></h5>
+        <?php if(get_post_meta($post->ID, 'ale_faq_question_4', true)){ ?>
+        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_4', true)); ?></a></h5>
+        <?php } ?>
         <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
+          <?php if(get_post_meta($post->ID, 'ale_faq_answer_4', true)){ ?>
+            <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_4', true)); ?></p>
+          <?php } ?>
         </div>
 
-        <h5><a href="#">General</a></h5>
+        <?php if(get_post_meta($post->ID, 'ale_faq_question_5', true)){ ?>
+        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_5', true)); ?></a></h5>
+        <?php } ?>
         <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
+          <?php if(get_post_meta($post->ID, 'ale_faq_answer_5', true)){ ?>
+            <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_5', true)); ?></p>
+          <?php } ?>
         </div>
 
-        <h5><a href="#">General</a></h5>
+        <?php if(get_post_meta($post->ID, 'ale_faq_question_6', true)){ ?>
+        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_6', true)); ?></a></h5>
+        <?php } ?>
         <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
+          <?php if(get_post_meta($post->ID, 'ale_faq_answer_6', true)){ ?>
+            <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_6', true)); ?></p>
+          <?php } ?>
         </div>
 
-        <h5><a href="#">General</a></h5>
+        <?php if(get_post_meta($post->ID, 'ale_faq_question_7', true)){ ?>
+        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_7', true)); ?></a></h5>
+        <?php } ?>
         <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
+          <?php if(get_post_meta($post->ID, 'ale_faq_answer_7', true)){ ?>
+            <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_7', true)); ?></p>
+          <?php } ?>
         </div>
 
-        <h5><a href="#">General</a></h5>
+        <?php if(get_post_meta($post->ID, 'ale_faq_question_8', true)){ ?>
+        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_8', true)); ?></a></h5>
+        <?php } ?>
         <div class="inner">
-          <p>An mel sumo libris assentior. Quando dicant legimus sea ea, diam convenire forensibus ad pri, mea voluptua scripserit ex. In accumsan delicata sit. Usu munere eripuit indoctum id. Has putent adversarium an, illum melius option ut ius. Mel ne aeque nonumy, stet exerci qualisque quo in.</p>
+          <?php if(get_post_meta($post->ID, 'ale_faq_answer_8', true)){ ?>
+            <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_answer_8', true)); ?></p>
+          <?php } ?>
         </div>
 
       </div>

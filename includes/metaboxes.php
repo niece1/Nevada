@@ -1245,7 +1245,7 @@ function aletheme_metaboxes($meta_boxes) {
                 'name' => __('FAQ section description', 'aletheme'),
                 'desc' => __('Insert FAQ description', 'aletheme'),
                 'id'   => $prefix . 'faq_description',
-                'type' => 'text',
+                'type' => 'textarea',
             ),
             array(
                 'name' => __('FAQ section question 1', 'aletheme'),
@@ -1345,38 +1345,7 @@ function aletheme_metaboxes($meta_boxes) {
             ),
         )
     ); 
-    //Post type Services Metaboxes
-    
-    $meta_boxes[] = array(
-        'id'         => 'slider_metaboxes',
-        'title'      => 'Slider Settings',
-        'pages'      => array( 'Slider' ), // Post type
-        'context'    => 'normal',
-        'priority'   => 'high',
-        'show_names' => true, // Show field names on the left
-        
-        'fields' => array(
-            
-            array(
-                'name' => __('File Upload', 'aletheme'),
-                'desc' => __('Slider image 1', 'aletheme'),
-                'id'   => $prefix . 'slider_image_1',
-                'type' => 'file',
-            ),
-            array(
-                'name' => __('File Upload', 'aletheme'),
-                'desc' => __('Slider image 2', 'aletheme'),
-                'id'   => $prefix . 'slider_image_2',
-                'type' => 'file',
-            ),
-            array(
-                'name' => __('File Upload', 'aletheme'),
-                'desc' => __('Slider image 3', 'aletheme'),
-                'id'   => $prefix . 'slider_image_3',
-                'type' => 'file',
-            ), 
-        )
-    );  
+
      
 return $meta_boxes;
 }
