@@ -21,13 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<!--Breadcrumbs-->
 
-	<section class="breadcrumbs" data-type="background" style="background-image: url(img/blue-jeans-2160265_1920.jpg); background-color: rgba(0, 0, 0, 0.9);">	
-	<h3><?php echo wp_get_document_title(); ?></h3>
-  <h6><?php nevada_the_breadcrumb(); ?></h6>
-	</section>
-<!-- /.breadcrumbs -->
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.

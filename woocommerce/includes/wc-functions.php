@@ -16,7 +16,20 @@ function nevada_add_breadcrumbs(){
 <?php
 }
 
-
+/**
+ * Change several of the breadcrumb defaults
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
+function jk_woocommerce_breadcrumbs() {
+    return array(
+            'delimiter'   => ' <i class="fas fa-angle-right"></i> ',
+            'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><i class="fas fa-home"></i>',
+            'wrap_after'  => '</nav>',
+            'before'      => '',
+            'after'       => '',
+            'home'        => _x( ' Home', 'breadcrumb', 'woocommerce' ),
+        );
+}
 
 add_action( 'woocommerce_before_single_product_summary', 'nevada_wrapper_product_image_start', 5 );
 function nevada_wrapper_product_image_start() {

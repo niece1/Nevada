@@ -1998,9 +1998,12 @@ footer .footer_wrapper .get_in_touch p i {
   position: relative;
 }
 
-.contacts .contacts_wrapper .form .input_styles input {
+
+
+.contacts .contacts_wrapper .form .wpcf7 .input_styles input {
   font-size: 2.6rem;
   color: #323746;
+  display: block;
 }
 
 .contacts .contacts_wrapper .form .input_styles input::-webkit-input-placeholder {
@@ -2096,20 +2099,21 @@ footer .footer_wrapper .get_in_touch p i {
   color: #323746;
 }
 
-.contacts .contacts_wrapper .form a.button {
+.contacts .contacts_wrapper .form button.button {
   color: #000;
   display: inline-block;
   -webkit-transition: 0.3s ease all;
   -o-transition: 0.3s ease all;
   transition: 0.3s ease all;
   margin-top: 20px;
+  background-color: #fff;
 }
 
-.contacts .contacts_wrapper .form a.button:hover {
+.contacts .contacts_wrapper .form button.button:hover {
   color: #fff;
 }
 
-.contacts .contacts_wrapper .form a.button:focus {
+.contacts .contacts_wrapper .form button.button:focus {
   color: #fff;
 }
 
@@ -3110,6 +3114,11 @@ table.woocommerce-table--order-details tr td {
   border: 1px solid #cccccc;
   padding-left: 10px;
   padding: 5px 10px;
+}
+
+nav.woocommerce-breadcrumb {
+  font-size: 1.8rem;
+  text-transform: none;
 }
 
 

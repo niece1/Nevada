@@ -16,7 +16,7 @@ function nevada_scripts() {
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.js', array ('jquery'), '', true);
 	wp_enqueue_script( 'nevada-particles', get_template_directory_uri() . '/assets/js/particles.js', array ('jquery'), '', true);
 
-	 if(!is_page_template('template-about.php')) {
+	 if(is_page_template('template-about.php')) {
 	wp_enqueue_script( 'nevada-counter', get_template_directory_uri() . '/assets/js/counter.js', array ('jquery'), '', true);
      }
 	wp_enqueue_script( 'navada-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array ('jquery'), '', true);

@@ -1346,6 +1346,68 @@ function aletheme_metaboxes($meta_boxes) {
         )
     ); 
 
+//Page Contact Metaboxes
+   
+     $meta_boxes[] = array(
+        'id'         => 'about_metaboxes',
+        'title'      => 'Contact Page Settings',
+        'pages'      => array( 'page', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        'show_on'    => array( 'key' => 'page-template', 'value' => array('templates/template-contact.php'), ), // Specific post templates to display this metabox
+        'fields' => array(
+        	array(
+                'name' => __('Contact title', 'aletheme'),
+                'desc' => __('Insert contact title', 'aletheme'),
+                'id'   => $prefix . 'contact_title',
+                'type' => 'text',
+            ),
+            array(
+                'name' => __('Contact description', 'aletheme'),
+                'desc' => __('Insert contact description', 'aletheme'),
+                'id'   => $prefix . 'contact_description',
+                'type' => 'textarea',
+            ),
+            array(
+                'name' => __('Address section title', 'aletheme'),
+                'desc' => __('Insert address section title', 'aletheme'),
+                'id'   => $prefix . 'address_section_title',
+                'type' => 'text',
+            ),
+            array(
+                'name' => __('Address section description', 'aletheme'),
+                'desc' => __('Insert address section description', 'aletheme'),
+                'id'   => $prefix . 'address_section_description',
+                'type' => 'textarea',
+            ),
+            array(
+                'name' => __('Phone', 'aletheme'),
+                'desc' => __('Insert store phone', 'aletheme'),
+                'id'   => $prefix . 'store_phone',
+                'type' => 'text',
+            ),
+            array(
+                'name' => __('Email', 'aletheme'),
+                'desc' => __('Insert store email', 'aletheme'),
+                'id'   => $prefix . 'store_email',
+                'type' => 'text',
+            ),
+            array(
+                'name' => __('Address', 'aletheme'),
+                'desc' => __('Insert store address', 'aletheme'),
+                'id'   => $prefix . 'store_address',
+                'type' => 'text',
+            ),
+            array(
+                'name' => __('Map', 'aletheme'),
+                'desc' => __('Insert map code here', 'aletheme'),
+                'id'   => $prefix . 'store_map',
+                'type' => 'textarea',
+            ),
+        )
+    ); 
+
      
 return $meta_boxes;
 }
