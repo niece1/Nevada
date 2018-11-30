@@ -1,18 +1,17 @@
 <?php
 /*Template name: About
 */
-?>
-
-<?php get_header(); ?>
+ get_header(); ?>
 
 <!--Breadcrumbs-->
 
-	<section class="breadcrumbs" data-type="background" style="background-image: url(img/blue-jeans-2160265_1920.jpg); background-color: rgba(0, 0, 0, 0.9);">	
-	<h3>About Us</h3>
-  <h6><i class="fas fa-home"></i>Home<i class="fas fa-angle-right"></i>About</h6>
-	</section>
+<?php if(get_post_meta('212', 'ale_about_breadcrumbs', true)){ ?>
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);"> 
+  <h3><?php the_title(); ?></h3>
+  <h6><?php nevada_the_breadcrumb(); ?></h6>
+</section>
+<?php } ?>
 <!-- /.breadcrumbs -->
-
 
   <!--About Section-->
 

@@ -51,4 +51,29 @@ function nevada_custom_post_type_services() {
     register_post_type( 'services', $args );
 }
 add_action( 'init', 'nevada_custom_post_type_services' );
-?>
+
+
+function nevada_custom_post_type_breadcrumbs() {
+    $labels = array(
+        'name'                  => _x( 'Breadcrumbs', 'Post type general name', 'textdomain' ),
+        'singular_name'         => _x( 'Breadcrumb', 'Post type singular name', 'textdomain' ),    
+    );
+ 
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'breadcrumbs' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array( 'title', 'editor', 'thumbnail' ),
+    );
+ 
+    register_post_type( 'breadcrumbs', $args );
+}
+add_action( 'init', 'nevada_custom_post_type_breadcrumbs' );

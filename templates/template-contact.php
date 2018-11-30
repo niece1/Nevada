@@ -3,13 +3,16 @@
 */
 ?>
 <?php get_header(); ?>
-	<section class="breadcrumbs" data-type="background"  style="background-image: url(img/jeans-2406521_1920.jpg);">	
-    <h3>Contact Us</h3>
-  <h6><i class="fas fa-home"></i>Home<i class="fas fa-angle-right"></i>Contacts</h6>
-	<!-- /.breacrumbs -->
-	</section>
-
 	
+  <!--Breadcrumbs-->
+
+<?php if(get_post_meta('212', 'ale_contact_breadcrumbs', true)){ ?>
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_contact_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);"> 
+  <h3><?php the_title(); ?></h3>
+  <h6><?php nevada_the_breadcrumb(); ?></h6>
+</section>
+<?php } ?>
+<!-- /.breadcrumbs -->
 
 <!--Contact Form Section-->
 

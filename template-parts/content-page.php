@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_content_page_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 

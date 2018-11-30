@@ -976,7 +976,7 @@ function aletheme_metaboxes($meta_boxes) {
     
     $meta_boxes[] = array(
         'id'         => 'services_metaboxes',
-        'title'      => 'Request Section Settings',
+        'title'      => 'Services Section Settings',
         'pages'      => array( 'Services' ), // Post type
         'context'    => 'normal',
         'priority'   => 'high',
@@ -1406,8 +1406,63 @@ function aletheme_metaboxes($meta_boxes) {
                 'type' => 'textarea',
             ),
         )
-    ); 
+    );
 
+    
+    //Post type Breadcrumbs Metaboxes
+    
+    $meta_boxes[] = array(
+        'id'         => 'breadcrumbs_metaboxes',
+        'title'      => 'Breadcrumbs Settings',
+        'pages'      => array( 'Breadcrumbs' ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+        'fields' => array(
+            array(
+                'name' => __('File Upload', 'aletheme'),
+                'desc' => __('Shop page breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'shop_breadcrumbs',
+                'type' => 'file',
+            ),
+            array(
+                'name' => __('File Upload', 'aletheme'),
+                'desc' => __('Blog page breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'blog_breadcrumbs',
+                'type' => 'file',
+            ),
+            array(
+                'name' => __('File Upload', 'aletheme'),
+                'desc' => __('About page breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'about_breadcrumbs',
+                'type' => 'file',
+            ),
+            array(
+                'name' => __('File Upload', 'aletheme'),
+                'desc' => __('Contact page breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'contact_breadcrumbs',
+                'type' => 'file',
+            ),
+            array(
+                'name' => __('File Upload', 'aletheme'),
+                'desc' => __('Content-page breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'content_page_breadcrumbs',
+                'type' => 'file',
+            ),
+            array(
+                'name' => __('File Upload', 'aletheme'),
+                'desc' => __('Content breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'content_breadcrumbs',
+                'type' => 'file',
+            ),
+            array(
+                'name' => __('File Upload', 'aletheme'),
+                'desc' => __('Content-search breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'content_search_breadcrumbs',
+                'type' => 'file',
+            ),
+        )
+    );
      
 return $meta_boxes;
 }

@@ -72,6 +72,9 @@ require get_template_directory() . '/includes/post-type.php';
 /*Register Custom Post Type*/
 require get_template_directory() . '/includes/breadcrumbs.php';
 
+/*Register Custom Post Type*/
+require get_template_directory() . '/includes/pagination.php';
+
 /*Navigation*/
 require get_template_directory() . '/includes/navigation.php';
 
@@ -96,5 +99,13 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/woocommerce/includes/wc-functions-remove.php';
 	require get_template_directory() . '/woocommerce/includes/wc_functions_cart.php';
 }
+
+// The excerpt length and output
+add_filter( 'excerpt_length', function(){
+	return 25;
+} );
+add_filter('excerpt_more', function($more) {
+	return '...';
+});
 
 
