@@ -10,7 +10,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_content_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);">
+	<?php nevada_post_thumbnail(); ?>
+	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -23,13 +24,17 @@
 			<div class="entry-meta">
 				<?php
 				nevada_posted_on();
-				nevada_posted_by();
-				?>
+				nevada_posted_by(); ?>
+				<a href="<?php the_permalink() ?>" class="com-ments">
+	<?php comments_number(); ?>
+</a>
+				
+				
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php nevada_post_thumbnail(); ?>
+	
 
 	<div class="entry-content">
 		<?php

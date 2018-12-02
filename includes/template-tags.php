@@ -49,6 +49,7 @@ if ( ! function_exists( 'nevada_posted_by' ) ) :
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
+			
 endif;
 
 if ( ! function_exists( 'nevada_entry_footer' ) ) :
@@ -73,7 +74,7 @@ if ( ! function_exists( 'nevada_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+        if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			comments_popup_link(
 				sprintf(

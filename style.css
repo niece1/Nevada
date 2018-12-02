@@ -2152,7 +2152,7 @@ footer .footer_wrapper .get_in_touch p i {
   width: 75%;
   margin: 50px auto;
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 70% 25%;
   grid-column-gap: 60px;
 }
 
@@ -2167,6 +2167,130 @@ footer .footer_wrapper .get_in_touch p i {
 
 .single_layout .single_layout_wrapper .right_sidebar {
   overflow: hidden;
+}
+
+.entry-title {
+  font-size: 3.5rem;
+  color: #59aee9;
+}
+
+.entry-content {
+  font-size: 1.6rem;
+}
+
+.widget-title {
+  font-size: 2rem;
+  padding-bottom: 5px;
+  color: #59aee9;
+}
+
+.widget {
+  font-size: 1.6rem;
+  margin: 0 0 5px 0;
+}
+
+.widget ul li {
+  padding-bottom: 5px;
+}
+
+.tagcloud a.tag-cloud-link {
+  font-size: 1.6rem !important;
+  color: #cccccc;
+  background: #323746;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+.wp-video {
+  margin-top: 10px;
+}
+
+.entry-meta {
+  font-size: 1.6rem;
+  background: #323746;
+  margin: 5px 0;
+}
+.entry-meta .posted-on {
+  color: #cccccc;
+}
+
+.entry-meta .posted-on a {
+  color: #59aee9;
+}
+
+.entry-meta time.updated {
+  margin-left: 5px;
+}
+
+.entry-meta span.byline {
+  color: #cccccc;
+}
+
+.entry-meta a.com-ments {
+  color: #cccccc;
+}
+
+span.author a {
+  color: #59aee9;
+}
+
+/*Comments Styles*/
+
+.entry-footer {
+  margin: 5px 0;
+}
+.entry-footer .cat-links {
+  color: #cccccc;
+  font-size: 1.6rem;
+  margin-right: 10px;
+}
+
+.entry-footer .cat-links a {
+  color: #59aee9;
+}
+
+.entry-footer .tags-links {
+  color: #cccccc;
+  font-size: 1.6rem;
+}
+
+.entry-footer .tags-links a {
+  color: #59aee9;
+}
+
+.entry-footer .edit-link a.post-edit-link {
+  color: #cccccc;
+  font-size: 1.6rem;
+  margin-left: 10px;
+}
+
+.entry-footer .edit-link a.post-edit-link span.screen-reader-text {
+  color: #59aee9;
+}
+
+h3.comment-reply-title {
+  font-size: 2rem;
+}
+
+p.logged-in-as a {
+  font-size: 1.6rem;
+  color: #59aee9;
+}
+
+p.comment-form-comment {
+  font-size: 1.6rem;
+}
+
+p.comment-form-email {
+  font-size: 1.6rem;
+}
+
+p.comment-form-author {
+  font-size: 1.6rem;
+}
+
+p.comment-notes {
+  font-size: 1.6rem;
 }
 
 /*Single Product Page*/
@@ -2755,7 +2879,7 @@ span#reply-title {
 }
 
 /*WC Cart Styles*/
-header.entry-header {
+/*header.entry-header {
   height: 40vh;
   background-color: green; 
   padding-top: 17vh;
@@ -2764,7 +2888,7 @@ header.entry-header {
 header.entry-header h1.entry-title {
   margin: auto;
   text-align: center; 
-}
+}*/
 
 .woocommerce form.woocommerce-cart-form table.shop_table {
   width: 100%;
