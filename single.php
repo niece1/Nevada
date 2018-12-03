@@ -18,6 +18,7 @@ get_header();
 </section>
 <?php } ?>
 <!-- /.breadcrumbs -->
+
 <div class="single_layout">
 	<div class="single_layout_wrapper">
 		<div class="blog_left">

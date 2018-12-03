@@ -53,6 +53,7 @@ if ( post_password_required() ) {
 			wp_list_comments( array(
 				'style'      => 'ol',
 				'short_ping' => true,
+				'avatar_size' => 45,
 			) );
 			?>
 		</ol><!-- .comment-list -->
@@ -70,7 +71,21 @@ if ( post_password_required() ) {
 	endif; // Check for have_comments().
 	
 
-	comment_form();
+$commenter = wp_get_current_commenter();
+$req = get_option( 'require_name_email' );
+$aria_req = ( $req ? " aria-required='true'" : '' );
+    $defaults = array(
+	
+
+	'class_submit'         => 'submit button',
+	'name_submit'          => 'submit',
+	'label_submit'         => __( '' ),
+	'submit_button'        => '<button name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" >Post comment</button>',
+	'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
+	
+);
+
+	comment_form($defaults);
 	?>
 
 </div><!-- #comments -->

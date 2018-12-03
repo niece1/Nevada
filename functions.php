@@ -108,4 +108,36 @@ add_filter('excerpt_more', function($more) {
 	return '...';
 });
 
+// Comment form fields reorder
+
+add_filter('comment_form_fields', 'nevada_reorder_comment_fields' );
+function nevada_reorder_comment_fields( $fields ){
+	// die(print_r( $fields )); // посмотрим какие поля есть
+
+	$new_fields = array(); // сюда соберем поля в новом порядке
+
+	$myorder = array('author','email','comment'); // нужный порядок
+
+	foreach( $myorder as $key ){
+		$new_fields[ $key ] = $fields[ $key ];
+		unset( $fields[ $key ] );
+	}
+
+	// если остались еще какие-то поля добавим их в конец
+	if( $fields )
+		foreach( $fields as $key => $val )
+			$new_fields[ $key ] = $val;
+
+	return $new_fields;
+}
+
+// Comment form URL field remove
+add_filter('comment_form_default_fields', 'nevada_url_remove');
+function nevada_url_remove($fields)
+{
+ if(isset($fields['url']))
+ unset($fields['url']);
+ return $fields;
+ }
+
 

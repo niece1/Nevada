@@ -9,9 +9,22 @@
 
 get_header();
 ?>
+    
+   <!--Breadcrumbs-->
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<?php if(get_post_meta('212', 'ale_about_breadcrumbs', true)){ ?>
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);"> 
+  <h3><?php the_title(); ?></h3>
+  <h6><?php nevada_the_breadcrumb(); ?></h6>
+</section>
+<?php } ?>
+<!-- /.breadcrumbs -->
+
+<div class="single_layout">
+	<div class="single_layout_wrapper">
+		<div class="blog_left">
+
+	
 
 		<?php if ( have_posts() ) : ?>
 
@@ -32,7 +45,7 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
 
@@ -45,9 +58,13 @@ get_header();
 		endif;
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div>
+<div class="right_sidebar">
+<?php
+get_sidebar(); ?>
+</div>
+</div>
 
 <?php
-get_sidebar();
+
 get_footer();

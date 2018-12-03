@@ -2160,7 +2160,7 @@ footer .footer_wrapper .get_in_touch p i {
   overflow: hidden;
 }
 
-.single_layout .single_layout_wrapper .blog_left img {
+.single_layout .single_layout_wrapper .blog_left img.attachment-post-thumbnail {
   width: 100%;
   height: auto;
 }
@@ -2234,6 +2234,21 @@ span.author a {
   color: #59aee9;
 }
 
+/*Search Page Styles*/
+
+.entry-summary {
+  font-size: 1.6rem;
+}
+
+h1.page-title {
+  font-size: 3.5rem;
+  color: #59aee9;
+}
+
+.entry-title a {
+  color: #59aee9;
+}
+
 /*Comments Styles*/
 
 .entry-footer {
@@ -2264,6 +2279,12 @@ span.author a {
   margin-left: 10px;
 }
 
+.comments-link a {
+  font-size: 1.6rem;
+  color: #cccccc;
+  margin-left: 10px;
+}
+
 .entry-footer .edit-link a.post-edit-link span.screen-reader-text {
   color: #59aee9;
 }
@@ -2275,6 +2296,7 @@ h3.comment-reply-title {
 p.logged-in-as a {
   font-size: 1.6rem;
   color: #59aee9;
+  font-weight: 600;
 }
 
 p.comment-form-comment {
@@ -2291,6 +2313,51 @@ p.comment-form-author {
 
 p.comment-notes {
   font-size: 1.6rem;
+}
+
+#comments button.button {
+  color: #000;
+  background-color: #fff;
+}
+
+#comments button.button:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.comment-author {
+  background: #fff;
+  font-size: 1.6rem;
+}
+
+h2.comments-title {
+  font-size: 3rem;
+  color: #59aee9;
+}
+
+.comment-metadata {
+  background: #fff;
+  font-size: 1.6rem;
+}
+
+a.comment-edit-link {
+  color: #59aee9;
+  font-weight: 600;
+}
+
+.comment-content {
+  font-size: 1.6rem;
+}
+
+.reply a {
+  color: #59aee9;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.comment-respond small a {
+  font-size: 1.6rem;
+  color: #59aee9;
 }
 
 /*Single Product Page*/
@@ -2463,6 +2530,7 @@ table.woocommerce-grouped-product-list .woocommerce-grouped-product-list-item__l
   font-size: 1.6rem;
   color: #4e4e4e;
   width: 100%;
+  outline: none;
 }
 
 .comment-form label {
@@ -2476,6 +2544,7 @@ table.woocommerce-grouped-product-list .woocommerce-grouped-product-list-item__l
   padding: 15px;
   color: #4e4e4e;
   font-size: 1.6rem;
+  outline: none;
 }
 
 #review_form .button {
@@ -2500,7 +2569,7 @@ table.woocommerce-grouped-product-list .woocommerce-grouped-product-list-item__l
   padding-left: 5px;
 }
 
-/*Image Gallery Styles*/
+/*WC Image Gallery Styles*/
 ol.flex-control-thumbs {
   overflow: hidden;
   list-style: none;
@@ -2866,7 +2935,7 @@ span#reply-title {
   padding-bottom: 5px;
 }
 
-/*Page Content Styles*/
+/*WC Page Content Styles*/
 
 .nevada_page {
   width: 100%;
