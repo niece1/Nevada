@@ -2156,6 +2156,12 @@ footer .footer_wrapper .get_in_touch p i {
   grid-column-gap: 60px;
 }
 
+@media only screen and (max-width: 850px) {
+  .single_layout .single_layout_wrapper {
+    grid-template-columns: auto;
+  }
+}
+
 .single_layout .single_layout_wrapper .blog_left {
   overflow: hidden;
 }
@@ -2167,6 +2173,12 @@ footer .footer_wrapper .get_in_touch p i {
 
 .single_layout .single_layout_wrapper .right_sidebar {
   overflow: hidden;
+}
+
+@media only screen and (max-width: 850px) {
+  .single_layout .single_layout_wrapper .right_sidebar {
+    margin-top: 20px;
+  }
 }
 
 .entry-title {
@@ -2197,8 +2209,9 @@ footer .footer_wrapper .get_in_touch p i {
   font-size: 1.6rem !important;
   color: #cccccc;
   background: #323746;
-  padding: 2px 4px;
+  padding: 2px 6px;
   border-radius: 5px;
+  line-height: 3rem;
 }
 
 .wp-video {
@@ -2209,6 +2222,7 @@ footer .footer_wrapper .get_in_touch p i {
   font-size: 1.6rem;
   background: #323746;
   margin: 5px 0;
+  border-top: 3px solid #59aee9;
 }
 .entry-meta .posted-on {
   color: #cccccc;
@@ -2252,7 +2266,8 @@ h1.page-title {
 /*Comments Styles*/
 
 .entry-footer {
-  margin: 5px 0;
+  margin: 20px 0;
+  border-top: 3px solid #59aee9;
 }
 .entry-footer .cat-links {
   color: #cccccc;
@@ -2948,16 +2963,6 @@ span#reply-title {
 }
 
 /*WC Cart Styles*/
-/*header.entry-header {
-  height: 40vh;
-  background-color: green; 
-  padding-top: 17vh;
-}
-
-header.entry-header h1.entry-title {
-  margin: auto;
-  text-align: center; 
-}*/
 
 .woocommerce form.woocommerce-cart-form table.shop_table {
   width: 100%;
@@ -3117,6 +3122,13 @@ p.cart-empty {
   padding: 10px 0 10px 0;
 }
 
+.woocommerce .woocommerce-notices-wrapper ul {
+  background-color: #323746;
+  list-style: none;
+  color: #cccccc;
+  padding: 1px 10px 1px 10px;
+}
+
 /* Checkout Page Styles*/
 
 .woocommerce-form-coupon-toggle .woocommerce-info {
@@ -3127,6 +3139,24 @@ p.cart-empty {
   color: #59aee9;
   font-weight: 600;
   font-size: 1.6rem;
+}
+
+.woocommerce-NoticeGroup ul {
+  list-style: none;
+  margin-top: 15px;
+  color: #cccccc;
+  background-color: #323746;
+  padding: 1px 10px;
+  border-top: 3px solid #59aee9;
+}
+
+ul.woocommerce-error {
+  background-color: #323746;
+  color: #cccccc;
+  list-style: none;
+  margin-top: 10px;
+  padding: 2px 20px;
+  border-top: 3px solid #59aee9;
 }
 
 form.checkout_coupon p {
@@ -3151,6 +3181,7 @@ p.form-row-last button:hover {
 
 .woocommerce-checkout-payment {
   background-color: #323746;
+  border-top: 3px solid #59aee9;
 
 }
 
@@ -3165,6 +3196,30 @@ p.form-row-last button:hover {
   background-color: #323746;
   margin: 5px 0 10px 10px;
   color: #cccccc;
+}
+
+.woocommerce-form-login-toggle {
+  background-color: #323746;
+  margin: 0 0 10px 0;
+  color: #59aee9;
+  font-weight: 600;
+  padding: 2px 20px;
+  border-top: 3px solid #59aee9;
+}
+
+.woocommerce-info {
+  background-color: #323746 !important;
+}
+
+.woocommerce-info a.showlogin {
+  color: #cccccc;
+  font-weight: 600;
+  margin: 0 0 0 10px;
+}
+
+.woocommerce-info a.showlogin:hover {
+  color: #59aee9;
+  transition: all 600ms ease;
 }
 
 .payment_box {
@@ -3331,6 +3386,80 @@ table.woocommerce-table--order-details tr td {
   border: 1px solid #cccccc;
   padding-left: 10px;
   padding: 5px 10px;
+}
+
+/*My Account*/
+
+.woocommerce-MyAccount-content p a {
+  color: #59aee9;
+  font-weight: 600;
+}
+
+.woocommerce h2 {
+  color: #59aee9;
+  font-size: 4rem;
+}
+
+.form-row .button {
+  background-color: #fff;
+}
+
+.form-row .button:hover {
+  color: #fff;
+}
+
+form.woocommerce-form-login p {
+  margin: 0 0 10px 0;
+}
+
+form.woocommerce-form-login p label{
+  display: block;
+}
+
+form.woocommerce-form-login p input {
+  padding: 10px 5px;
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  margin-top: 5px;
+}
+
+.woocommerce-LostPassword a {
+  color: #59aee9;
+  font-weight: 600;
+}
+
+.woocommerce-ResetPassword label {
+  display: block;
+  margin: 5px 0;
+}
+
+.woocommerce-ResetPassword input {
+  border: 1px solid #cccccc;
+  padding: 10px 5px;
+  margin: 0 0 10px 0;
+}
+
+.woocommerce-privacy-policy-text {
+  margin: 0 0 10px 0;
+}
+
+form.woocommerce-form-register p label {
+  display: block;
+  margin: 0 0 5px 0;
+}
+
+form.woocommerce-form-register p input {
+  border: 1px solid #cccccc;
+  padding: 10px 5px;
+  margin: 0 0 10px 0;
+}
+
+p.mailchimp-newsletter input {
+  float: left;
+}
+
+p.mailchimp-newsletter label span {
+  margin: 0 0 0 5px;
 }
 
 /*WC Breadcrumbs*/

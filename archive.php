@@ -14,7 +14,10 @@ get_header();
 
 <?php if(get_post_meta('212', 'ale_about_breadcrumbs', true)){ ?>
 <section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);"> 
-  <h3><?php the_title(); ?></h3>
+  <?php
+				the_archive_title( '<h3 class="page-title">', '</h3>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
   <h6><?php nevada_the_breadcrumb(); ?></h6>
 </section>
 <?php } ?>
@@ -29,10 +32,7 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+				
 			</header><!-- .page-header -->
 
 			<?php
