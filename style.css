@@ -2223,6 +2223,7 @@ footer .footer_wrapper .get_in_touch p i {
   background: #323746;
   margin: 5px 0;
   border-top: 3px solid #59aee9;
+  padding: 2px 20px;
 }
 .entry-meta .posted-on {
   color: #cccccc;
@@ -2263,11 +2264,20 @@ h1.page-title {
   color: #59aee9;
 }
 
-/*Comments Styles*/
+article.type-product {
+  width: 100%;
+}
+
+article a {
+  outline: none;
+}
+
+/*WC Comments Styles*/
 
 .entry-footer {
   margin: 20px 0;
   border-top: 3px solid #59aee9;
+  padding: 2px 20px;
 }
 .entry-footer .cat-links {
   color: #cccccc;
@@ -2289,19 +2299,17 @@ h1.page-title {
 }
 
 .entry-footer .edit-link a.post-edit-link {
-  color: #cccccc;
+  color: #59aee9;
+  margin: 2px 0 2px 20px;
+  font-weight: 600;
   font-size: 1.6rem;
-  margin-left: 10px;
 }
 
 .comments-link a {
   font-size: 1.6rem;
-  color: #cccccc;
-  margin-left: 10px;
-}
-
-.entry-footer .edit-link a.post-edit-link span.screen-reader-text {
   color: #59aee9;
+  margin: 2px 0 2px 20px;
+  font-weight: 600;
 }
 
 h3.comment-reply-title {
@@ -2908,10 +2916,12 @@ nav.woocommerce-pagination ul li span {
   float: left;
   margin-left: 4px;
 }
+
 form.woocommerce-ordering {
   float: right;
   margin-right: 4px;
 }
+
 .result_and_form_align form.woocommerce-ordering select {
   color: #323746;
   font-size: 1.4rem;
@@ -2919,6 +2929,7 @@ form.woocommerce-ordering {
   outline: none;
   border: 2px solid #59aee9;
 }
+
 ul.products li.product .star-rating {
   margin: auto;
   font-size: 1.4rem; 
@@ -2999,8 +3010,7 @@ td.product-remove a {
 td.product-remove a:hover {
   background-color: red;
   color: #fff;
-  
-  transition: all 500ms ease;
+  transition: all 600ms ease;
 }
 
 tr.woocommerce-cart-form__cart-item td.product-name a {
@@ -3018,9 +3028,15 @@ td.product-thumbnail a img {
   border-top: 3px solid #59aee9;
   background-color: #323746 !important;
   padding: 15px 0 15px 20px;
-  color: #59aee9;
+  color: #cccccc;
   font-weight: 600;
   font-size: 1.6rem;
+}
+
+.woocommerce-message a {
+  color: #59aee9;
+  margin: 0 0 0 10px;
+  font-weight: 600;
 }
 
 .woocommerce-message a.button {
@@ -3056,7 +3072,48 @@ td.product-thumbnail a img {
 }
 
 .woocommerce .cart .button[name="update_cart"] {
+  margin: 0 0 0 10px;
+  height: 4.5rem;
   float: right;
+}
+
+@media only screen and (max-width: 795px) {
+  .woocommerce .cart .button[name="update_cart"] {
+    float: none;
+    margin: 5px 0 0 0;
+    width: 100%;
+  }
+  .coupon {
+    float: none;
+  }
+  .coupon button {
+    float: right !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .quantity {
+    display: inline-block;
+  }
+  .quantity input {
+    float: right;
+  }
+  .coupon input {
+    float: left;
+  }
+  .product-thumbnail::before {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 557px) {
+  .coupon input {
+    width: 100%;
+    margin: 0 0 5px 0;
+  }
+  .coupon button {
+    width: 100%;
+  }
 }
 
 .woocommerce .cart .button:hover {
@@ -3192,7 +3249,7 @@ p.form-row-last button:hover {
   padding: 10px 0 0 0;
 }
 
-.woocommerce-checkout-payment button {
+.woocommerce-checkout-payment .place-order button {
   background-color: #323746;
   margin: 5px 0 10px 10px;
   color: #cccccc;
@@ -3254,6 +3311,12 @@ p.form-row-last button:hover {
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 100px;
+}
+
+@media only screen and (max-width: 850px) {
+  .woocommerce .woocommerce-checkout .col2-set {
+    grid-template-columns: auto;
+  }
 }
 
 .woocommerce .col2-set h3 {
@@ -3335,10 +3398,14 @@ p#order_comments_field label {
   color: #4e4e4e;
 }
 
-
 h3#order_review_heading {
   font-size: 3rem;
   color: #323746;
+}
+
+p.lost_password a {
+  color: #59aee9;
+  font-weight: 600;
 }
 
 /*Thank you Page Styles*/
@@ -3452,6 +3519,10 @@ form.woocommerce-form-register p input {
   border: 1px solid #cccccc;
   padding: 10px 5px;
   margin: 0 0 10px 0;
+}
+
+form.woocommerce-form-login button {
+  margin: 0 0 5px 0;
 }
 
 p.mailchimp-newsletter input {
