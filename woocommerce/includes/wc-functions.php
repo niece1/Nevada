@@ -2,25 +2,28 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
+/*Breadcrumbs*/
+
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 add_action( 'woocommerce_before_main_content', 'nevada_add_breadcrumbs', 20 );
 function nevada_add_breadcrumbs(){
 	?>
-	<!--Breadcrumbs-->
+	
 
 	<section class="breadcrumbs" data-type="background" style="background-image: url('<?php echo esc_attr(get_post_meta('212', 'ale_shop_breadcrumbs', true)); ?>'); background-color: rgba(0, 0, 0, 0.9);">	
 	<h3><?php echo wp_get_document_title(); ?></h3>
   <h6><?php woocommerce_breadcrumb(); ?></h6>
 	</section>
-<!-- /.breadcrumbs -->
+
 <?php
 }
 
 /**
  * Change several of the breadcrumb defaults
  */
-add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
-function jk_woocommerce_breadcrumbs() {
+add_filter( 'woocommerce_breadcrumb_defaults', 'nevada_woocommerce_breadcrumbs' );
+function nevada_woocommerce_breadcrumbs() {
     return array(
             'delimiter'   => ' <i class="fas fa-angle-right"></i> ',
             'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><i class="fas fa-home"></i>',
@@ -77,7 +80,7 @@ function nevada_woocommerce_scripts() {
 
 add_action( 'woocommerce_before_main_content', 'nevada_archive_wrapper_start', 40 );
 function nevada_archive_wrapper_start(){
-	if ( is_shop() ) {
+	if ( is_shop() || is_product_category() ) {
 ?>
 	<div class="archive_wrapper">
 <?php
@@ -85,12 +88,31 @@ function nevada_archive_wrapper_start(){
 }
 add_action( 'woocommerce_after_main_content', 'nevada_archive_wrapper_end', 20 );
 function nevada_archive_wrapper_end(){
-	if ( is_shop() ) {
+	if ( is_shop() || is_product_category() ) {
 ?>
     </div>
 	<?php
    }
 }
+
+/*Splitting Subcategoties from Products on Shop Page*/
+
+remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories');
+add_action( 'woocommerce_before_shop_loop', 'nevada_out_subcategories',40 );
+function nevada_out_subcategories() {
+	$cat_out = woocommerce_output_product_categories( array(
+		'before'    => '<ul class="products">',
+		'after'     => '</ul>',
+		'parent_id' => is_product_category() ? get_queried_object_id() : 0,
+	) );
+	return $cat_out;
+}
+add_filter( 'product_cat_class', 'nevada_add_classes_product_cat' );
+function nevada_add_classes_product_cat($classes){
+	$classes[] = '';
+return $classes;
+}
+
 
 /**
  * Change number or products per row to 3
@@ -116,9 +138,12 @@ function new_loop_shop_per_page( $cols ) {
   return $cols;
 }
 */
+
+/*WC Shop & Product Category Title Remove*/
+
 add_filter( 'woocommerce_show_page_title', 'nevada_hide_title_shop' );
 function nevada_hide_title_shop( $hide ) {
-	if ( is_shop() ) {
+	if ( is_shop() || is_product_category() ) {
 		$hide = false;
 	}
 	
@@ -132,7 +157,6 @@ function nevada_add_class_loop_item($clasess){
 	}
 	return $clasess;
 }
-
 
 
 
@@ -193,6 +217,21 @@ add_action( 'woocommerce_before_single_product', 'nevada_wrapper_print_notice_en
 function nevada_wrapper_print_notice_end() {
 	?>
 	</div>
+	</div>
+	<?php
+}
+
+/*My Account Page flexbox*/
+
+add_action( 'woocommerce_account_navigation', 'nevada_account_flexbox_start' , 5);
+function nevada_account_flexbox_start(){
+	?>
+	<div class="account_flexbox">
+	<?php
+}
+add_action( 'woocommerce_account_content', 'nevada_account_flexbox_end' , 10);
+function nevada_account_flexbox_end(){
+	?>
 	</div>
 	<?php
 }

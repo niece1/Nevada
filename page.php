@@ -25,7 +25,8 @@ get_header();
 <?php } ?>
 <!-- /.breadcrumbs -->
 
-	
+	<div class="nevada_page">
+	<div class="nevada_page_wrapper">
 
 		<?php
 		while ( have_posts() ) :
@@ -41,7 +42,8 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		
+		</div>
+</div>
 
 <?php
 

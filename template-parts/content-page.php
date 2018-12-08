@@ -14,8 +14,7 @@
 		
 	</header><!-- .entry-header -->
 
-	<div class="nevada_page">
-	<div class="nevada_page_wrapper">
+	
 
 	<?php nevada_post_thumbnail(); ?>
 
@@ -52,6 +51,5 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
-</div>
-</div>
+
 </article><!-- #post-<?php the_ID(); ?> -->
