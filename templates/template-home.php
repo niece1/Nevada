@@ -19,7 +19,7 @@
         <h6><?php echo esc_attr(get_post_meta($post->ID, 'ale_main_description', true)); ?></h6>
         <?php } ?>
 
-        <a href="#" class="button">
+        <a href="/shop" class="button">
                <?php if(get_post_meta($post->ID, 'ale_main_button', true)){ ?>
                 <?php echo esc_attr(get_post_meta($post->ID, 'ale_main_button', true)); ?>
                 <?php } ?>
@@ -59,7 +59,7 @@
         <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_description_1', true)); ?></p>
         <?php } ?>
 
-            	<a href="#" class="button">
+            	<a href="/about" class="button">
                <?php if(get_post_meta($post->ID, 'ale_icon_button_1', true)){ ?>
                 <?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_button_1', true)); ?>
                 <?php } ?>
@@ -79,7 +79,7 @@
         <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_description_2', true)); ?></p>
         <?php } ?>
 
-              <a href="#" class="button">
+              <a href="/blog" class="button">
                <?php if(get_post_meta($post->ID, 'ale_icon_button_2', true)){ ?>
                 <?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_button_2', true)); ?>
                 <?php } ?>
@@ -99,7 +99,7 @@
         <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_description_3', true)); ?></p>
         <?php } ?>
 
-              <a href="#" class="button">
+              <a href="/shop" class="button">
                <?php if(get_post_meta($post->ID, 'ale_icon_button_3', true)){ ?>
                 <?php echo esc_attr(get_post_meta($post->ID, 'ale_icon_button_3', true)); ?>
                 <?php } ?>
@@ -216,7 +216,7 @@
 
      </div>
      <div class="button_part">
-     <a href="#" class="button">
+     <a href="/contact" class="button">
                <?php if(get_post_meta($post->ID, 'ale_have_questions_button', true)){ ?>
                 <?php echo esc_attr(get_post_meta($post->ID, 'ale_have_questions_button', true)); ?>
                 <?php } ?>

@@ -13,12 +13,14 @@ get_header();
    <!--Breadcrumbs-->
 
 <?php if(get_post_meta('212', 'ale_about_breadcrumbs', true)){ ?>
-<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);"> 
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>);">
+	<div class="figcap">
   <?php
 				the_archive_title( '<h3 class="page-title">', '</h3>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
   <h6><?php nevada_the_breadcrumb(); ?></h6>
+</div>
 </section>
 <?php } ?>
 <!-- /.breadcrumbs -->

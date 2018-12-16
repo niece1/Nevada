@@ -6,10 +6,12 @@ get_header(); ?>
 <!--Breadcrumbs-->
 
 <?php if(get_post_meta('212', 'ale_blog_breadcrumbs', true)){ ?>
-<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_blog_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);">	
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_blog_breadcrumbs', true)); ?>);">
+  <div class="figcap">
   <h3><?php the_title(); ?></h3>
   <h6><?php nevada_the_breadcrumb(); ?></h6>
 </section>
+</div>
 <?php } ?>
 <!-- /.breadcrumbs -->
 

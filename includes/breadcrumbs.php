@@ -5,7 +5,7 @@ function nevada_the_breadcrumb(){
 	   echo '<i class="fas fa-home"></i>' . '<a href="'.site_url().'">Home</a> <i class="fas fa-angle-right"></i> ';
 		if(is_single()){ // posts
 		the_category(', ');
-		echo "  ";
+		echo ' <i class="fas fa-angle-right"></i> ';
 		
 			the_title();
 		

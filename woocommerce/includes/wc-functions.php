@@ -11,11 +11,12 @@ function nevada_add_breadcrumbs(){
 	?>
 	
 
-	<section class="breadcrumbs" data-type="background" style="background-image: url('<?php echo esc_attr(get_post_meta('212', 'ale_shop_breadcrumbs', true)); ?>'); background-color: rgba(0, 0, 0, 0.9);">	
+	<section class="breadcrumbs" data-type="background" style="background-image: url('<?php echo esc_attr(get_post_meta('212', 'ale_shop_breadcrumbs', true)); ?>');">
+		<div class="figcap">
 	<h3><?php echo wp_get_document_title(); ?></h3>
   <h6><?php woocommerce_breadcrumb(); ?></h6>
 	</section>
-
+</div>
 <?php
 }
 

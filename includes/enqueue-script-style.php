@@ -15,15 +15,13 @@ function nevada_scripts() {
     wp_register_script( 'jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.js', array ('jquery'), '', true);
 	wp_enqueue_script( 'nevada-particles', get_template_directory_uri() . '/assets/js/particles.js', array ('jquery'), '', true);
-
-	 if(is_page_template('template-about.php')) {
-	wp_enqueue_script( 'nevada-counter', get_template_directory_uri() . '/assets/js/counter.js', array ('jquery'), '', true);
-     }
 	wp_enqueue_script( 'navada-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array ('jquery'), '', true);
 	wp_enqueue_script( 'nevada-main', get_template_directory_uri() . '/assets/js/main.js', array ('jquery'), '', true);
 	wp_enqueue_script( 'nevada-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'nevada-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
-	
+	if(!is_page_template('template-about.php')) {
+	wp_enqueue_script( 'nevada-counter', get_template_directory_uri() . '/assets/js/counter.js', array ('jquery'), '', true);
+     }
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

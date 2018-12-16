@@ -6,9 +6,11 @@
 <!--Breadcrumbs-->
 
 <?php if(get_post_meta('212', 'ale_about_breadcrumbs', true)){ ?>
-<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);"> 
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>);">
+  <div class="figcap">
   <h3><?php the_title(); ?></h3>
   <h6><?php nevada_the_breadcrumb(); ?></h6>
+</div>
 </section>
 <?php } ?>
 <!-- /.breadcrumbs -->
@@ -61,7 +63,7 @@
         <?php } ?>
 
 
-        <a href="#" class="button">
+        <a href="/shop" class="button">
           <?php if(get_post_meta($post->ID, 'ale_about_button', true)){ ?>
             <?php echo esc_attr(get_post_meta($post->ID, 'ale_about_button', true)); ?>
           <?php } ?>
@@ -301,7 +303,7 @@
       <div class="accordion">
 
       	<?php if(get_post_meta($post->ID, 'ale_faq_question_1', true)){ ?>
-          <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_1', true)); ?></a></h5>
+          <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_1', true)); ?></a></h5>
         <?php } ?>
       <div class="inner">
 
@@ -311,7 +313,7 @@
       </div>
   
         <?php if(get_post_meta($post->ID, 'ale_faq_question_2', true)){ ?>
-          <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_2', true)); ?></a></h5>
+          <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_2', true)); ?></a></h5>
         <?php } ?>
         <div class="inner">
         <?php if(get_post_meta($post->ID, 'ale_faq_answer_2', true)){ ?>
@@ -320,7 +322,7 @@
         </div>
 
         <?php if(get_post_meta($post->ID, 'ale_faq_question_3', true)){ ?>
-          <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_3', true)); ?></a></h5>
+          <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_3', true)); ?></a></h5>
         <?php } ?>
         <div class="inner">
         <?php if(get_post_meta($post->ID, 'ale_faq_answer_3', true)){ ?>
@@ -329,7 +331,7 @@
         </div>
 
         <?php if(get_post_meta($post->ID, 'ale_faq_question_4', true)){ ?>
-        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_4', true)); ?></a></h5>
+        <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_4', true)); ?></a></h5>
         <?php } ?>
         <div class="inner">
           <?php if(get_post_meta($post->ID, 'ale_faq_answer_4', true)){ ?>
@@ -338,7 +340,7 @@
         </div>
 
         <?php if(get_post_meta($post->ID, 'ale_faq_question_5', true)){ ?>
-        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_5', true)); ?></a></h5>
+        <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_5', true)); ?></a></h5>
         <?php } ?>
         <div class="inner">
           <?php if(get_post_meta($post->ID, 'ale_faq_answer_5', true)){ ?>
@@ -347,7 +349,7 @@
         </div>
 
         <?php if(get_post_meta($post->ID, 'ale_faq_question_6', true)){ ?>
-        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_6', true)); ?></a></h5>
+        <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_6', true)); ?></a></h5>
         <?php } ?>
         <div class="inner">
           <?php if(get_post_meta($post->ID, 'ale_faq_answer_6', true)){ ?>
@@ -356,7 +358,7 @@
         </div>
 
         <?php if(get_post_meta($post->ID, 'ale_faq_question_7', true)){ ?>
-        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_7', true)); ?></a></h5>
+        <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_7', true)); ?></a></h5>
         <?php } ?>
         <div class="inner">
           <?php if(get_post_meta($post->ID, 'ale_faq_answer_7', true)){ ?>
@@ -365,7 +367,7 @@
         </div>
 
         <?php if(get_post_meta($post->ID, 'ale_faq_question_8', true)){ ?>
-        <h5><a href=""><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_8', true)); ?></a></h5>
+        <h5><a href="#"><?php echo esc_attr(get_post_meta($post->ID, 'ale_faq_question_8', true)); ?></a></h5>
         <?php } ?>
         <div class="inner">
           <?php if(get_post_meta($post->ID, 'ale_faq_answer_8', true)){ ?>

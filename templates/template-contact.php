@@ -7,9 +7,11 @@
   <!--Breadcrumbs-->
 
 <?php if(get_post_meta('212', 'ale_contact_breadcrumbs', true)){ ?>
-<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_contact_breadcrumbs', true)); ?>); background-color: rgba(0, 0, 0, 0.9);"> 
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_contact_breadcrumbs', true)); ?>);">
+  <div class="figcap">
   <h3><?php the_title(); ?></h3>
   <h6><?php nevada_the_breadcrumb(); ?></h6>
+</div>
 </section>
 <?php } ?>
 <!-- /.breadcrumbs -->
@@ -27,26 +29,6 @@
         <?php if(get_post_meta($post->ID, 'ale_contact_description', true)){ ?>
           <p><?php echo esc_attr(get_post_meta($post->ID, 'ale_contact_description', true)); ?></p>
         <?php } ?>
-
-      <!--  <form action="#">
-          
-             <div class="input_styles">
-              <input type="text" class="mat_input" id="name" placeholder="Name" >
-              <span class="backgrounds"></span>
-             </div>
-              
-            <div class="input_styles">
-              <input type="email" class="mat_input" id="email" placeholder="Email" >
-              <span class="backgrounds"></span>
-            </div>
-      
-            <div class="input_styles">
-              <input type="text" class="mat_input" id="message" placeholder="Message" >
-              <span class="backgrounds"></span>
-            </div>
-
-        </form>
-        <a href="#" class="button">Send</a> -->
 
         <?php if(do_shortcode('[contact-form-7 id="13" title="Contact page form"]')){ ?>
 			<?php echo do_shortcode('[contact-form-7 id="13" title="Contact page form"]'); ?>
