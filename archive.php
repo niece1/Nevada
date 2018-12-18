@@ -12,8 +12,8 @@ get_header();
     
    <!--Breadcrumbs-->
 
-<?php if(get_post_meta('212', 'ale_about_breadcrumbs', true)){ ?>
-<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_about_breadcrumbs', true)); ?>);">
+<?php if(get_post_meta('212', 'ale_archive_breadcrumbs', true)){ ?>
+<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_archive_breadcrumbs', true)); ?>);">
 	<div class="figcap">
   <?php
 				the_archive_title( '<h3 class="page-title">', '</h3>' );

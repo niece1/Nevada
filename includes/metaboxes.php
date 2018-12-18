@@ -1445,20 +1445,20 @@ function aletheme_metaboxes($meta_boxes) {
             ),
             array(
                 'name' => __('File Upload', 'aletheme'),
-                'desc' => __('Content-page breadcrumbs image', 'aletheme'),
-                'id'   => $prefix . 'content_page_breadcrumbs',
+                'desc' => __('Page breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'page_breadcrumbs',
                 'type' => 'file',
             ),
             array(
                 'name' => __('File Upload', 'aletheme'),
-                'desc' => __('Content breadcrumbs image', 'aletheme'),
-                'id'   => $prefix . 'content_breadcrumbs',
+                'desc' => __('Single breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'single_breadcrumbs',
                 'type' => 'file',
             ),
             array(
                 'name' => __('File Upload', 'aletheme'),
-                'desc' => __('Content-search breadcrumbs image', 'aletheme'),
-                'id'   => $prefix . 'content_search_breadcrumbs',
+                'desc' => __('Archive breadcrumbs image', 'aletheme'),
+                'id'   => $prefix . 'archive_breadcrumbs',
                 'type' => 'file',
             ),
         )
