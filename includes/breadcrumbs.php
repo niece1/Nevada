@@ -2,13 +2,13 @@
 function nevada_the_breadcrumb(){
 	global $post;
 	if(!is_home()){ 
-	   echo '<i class="fas fa-home"></i>' . '<a href="'.site_url().'">Home</a> <i class="fas fa-angle-right"></i> ';
+		echo '<i class="fas fa-home"></i>' . '<a href="'.site_url().'">Home</a> <i class="fas fa-angle-right"></i> ';
 		if(is_single()){ // posts
-		the_category(', ');
-		echo ' <i class="fas fa-angle-right"></i> ';
-		
+			the_category(', ');
+			echo ' <i class="fas fa-angle-right"></i> ';
+			
 			the_title();
-		
+			
 		}
 		elseif (is_page()) { // pages
 			if ($post->post_parent ) {
@@ -59,15 +59,15 @@ function nevada_the_breadcrumb(){
 		} elseif (is_404()) { // if page not found
 			echo 'Error 404';
 		}
-	 
+		
 		if (get_query_var('paged')) // number of page
-			echo ' (' . get_query_var('paged').'- page)';
-	 
+		echo ' (' . get_query_var('paged').'- page)';
+		
 	} else { // home
-	   $pageNum=(get_query_var('paged')) ? get_query_var('paged') : 1;
-	   if($pageNum>1)
-	      echo '<a href="'.site_url().'">Home</a>  /  '.$pageNum.'- page';
-	   else
-	      echo 'Home';
+		$pageNum=(get_query_var('paged')) ? get_query_var('paged') : 1;
+		if($pageNum>1)
+			echo '<a href="'.site_url().'">Home</a>  /  '.$pageNum.'- page';
+		else
+			echo 'Home';
 	}
 }

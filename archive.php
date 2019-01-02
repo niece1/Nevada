@@ -9,19 +9,19 @@
 
 get_header();
 ?>
-    
-   <!--Breadcrumbs-->
+
+<!--Breadcrumbs-->
 
 <?php if(get_post_meta('212', 'ale_archive_breadcrumbs', true)){ ?>
-<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_archive_breadcrumbs', true)); ?>);">
-	<div class="figcap">
-  <?php
-				the_archive_title( '<h3 class="page-title">', '</h3>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-  <h6><?php nevada_the_breadcrumb(); ?></h6>
-</div>
-</section>
+	<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_archive_breadcrumbs', true)); ?>);">
+		<div class="figcap">
+			<?php
+			the_archive_title( '<h3 class="page-title">', '</h3>' );
+			the_archive_description( '<div class="archive-description">', '</div>' );
+			?>
+			<h6><?php nevada_the_breadcrumb(); ?></h6>
+		</div>
+	</section>
 <?php } ?>
 <!-- /.breadcrumbs -->
 
@@ -29,18 +29,18 @@ get_header();
 	<div class="single_layout_wrapper">
 		<div class="blog_left">
 
-	
+			
 
-		<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				
-			</header><!-- .page-header -->
+				<header class="page-header">
+					
+				</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
 
 				/*
 				 * Include the Post-Type-specific template for the content.
@@ -60,11 +60,11 @@ get_header();
 		endif;
 		?>
 
-		</div>
-<div class="right_sidebar">
-<?php
-get_sidebar(); ?>
-</div>
+	</div>
+	<div class="right_sidebar">
+		<?php
+		get_sidebar(); ?>
+	</div>
 </div>
 </div>
 <?php

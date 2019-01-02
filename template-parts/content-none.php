@@ -31,21 +31,21 @@
 				esc_url( admin_url( 'post-new.php' ) )
 			);
 
-		elseif ( is_search() ) :
-			?>
-
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'nevada' ); ?></p>
-			<?php
-			get_search_form();
-
-		else :
-			?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'nevada' ); ?></p>
-			<?php
-			get_search_form();
-
-		endif;
+	elseif ( is_search() ) :
 		?>
-	</div><!-- .page-content -->
+
+		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'nevada' ); ?></p>
+		<?php
+		get_search_form();
+
+	else :
+		?>
+
+		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'nevada' ); ?></p>
+		<?php
+		get_search_form();
+
+	endif;
+	?>
+</div><!-- .page-content -->
 </section><!-- .no-results -->

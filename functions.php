@@ -25,7 +25,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
- require get_template_directory() . '/includes/widget-areas.php';
+require get_template_directory() . '/includes/widget-areas.php';
 
 /**
  * Enqueue scripts and styles.
@@ -128,16 +128,16 @@ function nevada_reorder_comment_fields( $fields ){
 		foreach( $fields as $key => $val )
 			$new_fields[ $key ] = $val;
 
-	return $new_fields;
-}
+		return $new_fields;
+	}
 
 // Comment form URL field remove
-add_filter('comment_form_default_fields', 'nevada_url_remove');
-function nevada_url_remove($fields)
-{
- if(isset($fields['url']))
- unset($fields['url']);
- return $fields;
- }
+	add_filter('comment_form_default_fields', 'nevada_url_remove');
+	function nevada_url_remove($fields)
+	{
+		if(isset($fields['url']))
+			unset($fields['url']);
+		return $fields;
+	}
 
 

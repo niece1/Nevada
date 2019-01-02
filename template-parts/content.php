@@ -26,8 +26,8 @@
 				nevada_posted_on();
 				nevada_posted_by(); ?>
 				<a href="<?php the_permalink() ?>" class="com-ments">
-	<?php comments_number(); ?>
-</a>
+					<?php comments_number(); ?>
+				</a>
 				
 				
 			</div><!-- .entry-meta -->

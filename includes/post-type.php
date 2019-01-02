@@ -3,9 +3,9 @@ function nevada_custom_post_type_slider() {
     $labels = array(
         'name'                  => _x( 'Sliders', 'Post type general name', 'textdomain' ),
         'singular_name'         => _x( 'Slider', 'Post type singular name', 'textdomain' ),
-      
+        
     );
- 
+    
     $args = array(
         'labels'             => $labels,
         'public'             => true,
@@ -20,10 +20,10 @@ function nevada_custom_post_type_slider() {
         'menu_position'      => null,
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
     );
- 
+    
     register_post_type( 'slider', $args );
 }
- 
+
 add_action( 'init', 'nevada_custom_post_type_slider' );
 
 
@@ -32,7 +32,7 @@ function nevada_custom_post_type_services() {
         'name'                  => _x( 'Services', 'Post type general name', 'textdomain' ),
         'singular_name'         => _x( 'Services', 'Post type singular name', 'textdomain' ),    
     );
- 
+    
     $args = array(
         'labels'             => $labels,
         'public'             => true,
@@ -47,7 +47,7 @@ function nevada_custom_post_type_services() {
         'menu_position'      => null,
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
     );
- 
+    
     register_post_type( 'services', $args );
 }
 add_action( 'init', 'nevada_custom_post_type_services' );
@@ -58,7 +58,7 @@ function nevada_custom_post_type_breadcrumbs() {
         'name'                  => _x( 'Breadcrumbs', 'Post type general name', 'textdomain' ),
         'singular_name'         => _x( 'Breadcrumb', 'Post type singular name', 'textdomain' ),    
     );
- 
+    
     $args = array(
         'labels'             => $labels,
         'public'             => true,
@@ -73,7 +73,7 @@ function nevada_custom_post_type_breadcrumbs() {
         'menu_position'      => null,
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
     );
- 
+    
     register_post_type( 'breadcrumbs', $args );
 }
 add_action( 'init', 'nevada_custom_post_type_breadcrumbs' );

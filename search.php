@@ -9,35 +9,35 @@
 
 get_header();
 ?>
-    <!--Breadcrumbs-->
+<!--Breadcrumbs-->
 
 <?php if(get_post_meta('212', 'ale_archive_breadcrumbs', true)){ ?>
-<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_archive_breadcrumbs', true)); ?>);">
-	<div class="figcap">
-  <h3 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'nevada' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h3>
-  <h6><?php nevada_the_breadcrumb(); ?></h6>
-</div>
-</section>
+	<section class="breadcrumbs" data-type="background" style="background-image: url(<?php echo esc_attr(get_post_meta('212', 'ale_archive_breadcrumbs', true)); ?>);">
+		<div class="figcap">
+			<h3 class="page-title">
+				<?php
+				/* translators: %s: search query. */
+				printf( esc_html__( 'Search Results for: %s', 'nevada' ), '<span>' . get_search_query() . '</span>' );
+				?>
+			</h3>
+			<h6><?php nevada_the_breadcrumb(); ?></h6>
+		</div>
+	</section>
 <?php } ?>
 <!-- /.breadcrumbs -->
 
-    <div class="single_layout">
+<div class="single_layout">
 	<div class="single_layout_wrapper">
 		<div class="blog_left">	
 
-		<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-			
+				
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
 
 				/**
 				 * Run the loop for the search to output the results.
@@ -54,13 +54,13 @@ get_header();
 
 		endif;
 		?>
+	</div>
+	<div class="right_sidebar">
+		<?php
+		get_sidebar(); ?>
+	</div>
 </div>
-<div class="right_sidebar">
-<?php
-get_sidebar(); ?>
-</div>
-</div>
-		
+
 
 <?php
 

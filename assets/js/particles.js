@@ -8,7 +8,7 @@
  * Inspired by http://requestlab.fr/ and http://disruptivebydesign.com/
  */
 
-;(function(window, document) {
+ ;(function(window, document) {
   "use strict";
   var pluginName = 'particleground';
 
@@ -55,7 +55,7 @@
     /**
      * Init
      */
-    function init() {
+     function init() {
       if (!canvasSupport) { return; }
 
       //Create canvas
@@ -98,7 +98,7 @@
     /**
      * Style the canvas
      */
-    function styleCanvas() {
+     function styleCanvas() {
       canvas.width = element.offsetWidth;
       canvas.height = element.offsetHeight;
       ctx.fillStyle = options.dotColor;
@@ -109,7 +109,7 @@
     /**
      * Draw particles
      */
-    function draw() {
+     function draw() {
       if (!canvasSupport) { return; }
 
       winW = window.innerWidth;
@@ -136,7 +136,7 @@
     /**
      * Add/remove particles.
      */
-    function resizeHandler() {
+     function resizeHandler() {
       // Resize the canvas
       styleCanvas();
 
@@ -170,14 +170,14 @@
     /**
      * Pause particle system
      */
-    function pause() {
+     function pause() {
       paused = true;
     }
 
     /**
      * Start particle system
      */
-    function start() {
+     function start() {
       paused = false;
       draw();
     }
@@ -185,7 +185,7 @@
     /**
      * Particle
      */
-    function Particle() {
+     function Particle() {
       this.stackPos;
       this.active = true;
       this.layer = Math.ceil(Math.random() * 3);
@@ -200,34 +200,34 @@
       this.speed = {}
       switch (options.directionX) {
         case 'left':
-          this.speed.x = +(-options.maxSpeedX + (Math.random() * options.maxSpeedX) - options.minSpeedX).toFixed(2);
-          break;
+        this.speed.x = +(-options.maxSpeedX + (Math.random() * options.maxSpeedX) - options.minSpeedX).toFixed(2);
+        break;
         case 'right':
-          this.speed.x = +((Math.random() * options.maxSpeedX) + options.minSpeedX).toFixed(2);
-          break;
+        this.speed.x = +((Math.random() * options.maxSpeedX) + options.minSpeedX).toFixed(2);
+        break;
         default:
-          this.speed.x = +((-options.maxSpeedX / 2) + (Math.random() * options.maxSpeedX)).toFixed(2);
-          this.speed.x += this.speed.x > 0 ? options.minSpeedX : -options.minSpeedX;
-          break;
+        this.speed.x = +((-options.maxSpeedX / 2) + (Math.random() * options.maxSpeedX)).toFixed(2);
+        this.speed.x += this.speed.x > 0 ? options.minSpeedX : -options.minSpeedX;
+        break;
       }
       switch (options.directionY) {
         case 'up':
-          this.speed.y = +(-options.maxSpeedY + (Math.random() * options.maxSpeedY) - options.minSpeedY).toFixed(2);
-          break;
+        this.speed.y = +(-options.maxSpeedY + (Math.random() * options.maxSpeedY) - options.minSpeedY).toFixed(2);
+        break;
         case 'down':
-          this.speed.y = +((Math.random() * options.maxSpeedY) + options.minSpeedY).toFixed(2);
-          break;
+        this.speed.y = +((Math.random() * options.maxSpeedY) + options.minSpeedY).toFixed(2);
+        break;
         default:
-          this.speed.y = +((-options.maxSpeedY / 2) + (Math.random() * options.maxSpeedY)).toFixed(2);
-          this.speed.x += this.speed.y > 0 ? options.minSpeedY : -options.minSpeedY;
-          break;
+        this.speed.y = +((-options.maxSpeedY / 2) + (Math.random() * options.maxSpeedY)).toFixed(2);
+        this.speed.x += this.speed.y > 0 ? options.minSpeedY : -options.minSpeedY;
+        break;
       }
     }
 
     /**
      * Draw particle
      */
-    Particle.prototype.draw = function() {
+     Particle.prototype.draw = function() {
       // Draw circle
       ctx.beginPath();
       ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, options.particleRadius / 2, 0, Math.PI * 2, true);
@@ -262,7 +262,7 @@
     /**
      * update particle position
      */
-    Particle.prototype.updatePosition = function() {
+     Particle.prototype.updatePosition = function() {
       if (options.parallax) {
         if (orientationSupport && !desktop) {
           // Map tiltX range [-30,30] to range [0,winW]
@@ -287,41 +287,41 @@
 
       switch (options.directionX) {
         case 'left':
-          if (this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
-            this.position.x = elWidth - this.parallaxOffsetX;
-          }
-          break;
+        if (this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+          this.position.x = elWidth - this.parallaxOffsetX;
+        }
+        break;
         case 'right':
-          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth) {
-            this.position.x = 0 - this.parallaxOffsetX;
-          }
-          break;
+        if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth) {
+          this.position.x = 0 - this.parallaxOffsetX;
+        }
+        break;
         default:
           // If particle has reached edge of canvas, reverse its direction
           if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
             this.speed.x = -this.speed.x;
           }
           break;
-      }
+        }
 
-      switch (options.directionY) {
-        case 'up':
+        switch (options.directionY) {
+          case 'up':
           if (this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
             this.position.y = elHeight - this.parallaxOffsetY;
           }
           break;
-        case 'down':
+          case 'down':
           if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight) {
             this.position.y = 0 - this.parallaxOffsetY;
           }
           break;
-        default:
+          default:
           // If particle has reached edge of canvas, reverse its direction
           if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
             this.speed.y = -this.speed.y;
           }
           break;
-      }
+        }
 
       // Move particle
       this.position.x += this.speed.x;
@@ -331,7 +331,7 @@
     /**
      * Setter: particle stacking position
      */
-    Particle.prototype.setStackPos = function(i) {
+     Particle.prototype.setStackPos = function(i) {
       this.stackPos = i;
     }
 
@@ -427,36 +427,36 @@
  * @see: http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
  * @license: MIT license
  */
-(function() {
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-      window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-      window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                 || window[vendors[x]+'CancelRequestAnimationFrame'];
-    }
+ (function() {
+  var lastTime = 0;
+  var vendors = ['ms', 'moz', 'webkit', 'o'];
+  for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+    window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+    || window[vendors[x]+'CancelRequestAnimationFrame'];
+  }
 
-    if (!window.requestAnimationFrame)
-      window.requestAnimationFrame = function(callback, element) {
-        var currTime = new Date().getTime();
-        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-        var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-          timeToCall);
-        lastTime = currTime + timeToCall;
-        return id;
-      };
+  if (!window.requestAnimationFrame)
+    window.requestAnimationFrame = function(callback, element) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+      var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+        timeToCall);
+      lastTime = currTime + timeToCall;
+      return id;
+    };
 
     if (!window.cancelAnimationFrame)
       window.cancelAnimationFrame = function(id) {
         clearTimeout(id);
       };
-}());
+    }());
 
-particleground(document.getElementById('particles'), {
-    dotColor: '#323746',
-    lineColor: '#323746',
-    particleRadius: 5,
-    lineWidth: 0.6,
-    parallax: true,
-    parallaxMultiplier: 7
+ particleground(document.getElementById('particles'), {
+  dotColor: '#323746',
+  lineColor: '#323746',
+  particleRadius: 5,
+  lineWidth: 0.6,
+  parallax: true,
+  parallaxMultiplier: 7
 });

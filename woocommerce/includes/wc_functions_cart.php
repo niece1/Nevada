@@ -17,16 +17,16 @@ if ( ! function_exists( 'nevada_woocommerce_cart_link_fragment' ) ) {
 		return $fragments;
 	}
 }
-	function nevada_woocommerce_cart_link() {
-		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'nevada' ); ?>">
-			<i class="fas fa-shopping-basket"></i>
-			<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ) ;?></span>
-			
-			
-		</a>
-		<?php
-	}
+function nevada_woocommerce_cart_link() {
+	?>
+	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'nevada' ); ?>">
+		<i class="fas fa-shopping-basket"></i>
+		<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ) ;?></span>
+		
+		
+	</a>
+	<?php
+}
 
 if ( ! function_exists( 'nevada_woocommerce_header_cart' ) ) {
 	/**

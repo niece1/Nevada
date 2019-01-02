@@ -13,11 +13,11 @@ function nevada_add_breadcrumbs(){
 
 	<section class="breadcrumbs" data-type="background" style="background-image: url('<?php echo esc_attr(get_post_meta('212', 'ale_shop_breadcrumbs', true)); ?>');">
 		<div class="figcap">
-	<h3><?php echo wp_get_document_title(); ?></h3>
-  <h6><?php woocommerce_breadcrumb(); ?></h6>
-	</section>
-</div>
-<?php
+			<h3><?php echo wp_get_document_title(); ?></h3>
+			<h6><?php woocommerce_breadcrumb(); ?></h6>
+		</section>
+	</div>
+	<?php
 }
 
 /**
@@ -25,25 +25,25 @@ function nevada_add_breadcrumbs(){
  */
 add_filter( 'woocommerce_breadcrumb_defaults', 'nevada_woocommerce_breadcrumbs' );
 function nevada_woocommerce_breadcrumbs() {
-    return array(
-            'delimiter'   => ' <i class="fas fa-angle-right"></i> ',
-            'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><i class="fas fa-home"></i>',
-            'wrap_after'  => '</nav>',
-            'before'      => '',
-            'after'       => '',
-            'home'        => _x( ' Home', 'breadcrumb', 'woocommerce' ),
-        );
+	return array(
+		'delimiter'   => ' <i class="fas fa-angle-right"></i> ',
+		'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><i class="fas fa-home"></i>',
+		'wrap_after'  => '</nav>',
+		'before'      => '',
+		'after'       => '',
+		'home'        => _x( ' Home', 'breadcrumb', 'woocommerce' ),
+	);
 }
 
 add_action( 'woocommerce_before_single_product_summary', 'nevada_wrapper_product_image_start', 5 );
 function nevada_wrapper_product_image_start() {
 	?>
 	<div class="product_left">
-	<?php
-}
-add_action( 'woocommerce_before_single_product_summary', 'nevada_wrapper_product_image_end', 25 );
-function nevada_wrapper_product_image_end() {
-	?>
+		<?php
+	}
+	add_action( 'woocommerce_before_single_product_summary', 'nevada_wrapper_product_image_end', 25 );
+	function nevada_wrapper_product_image_end() {
+		?>
 	</div>
 	<?php
 }
@@ -51,11 +51,11 @@ add_action( 'woocommerce_before_single_product_summary', 'nevada_wrapper_product
 function nevada_wrapper_product_entry_start() {
 	?>
 	<div class="product_right">
-	<?php
-}
-add_action( 'woocommerce_after_single_product_summary', 'nevada_wrapper_product_entry_end', 5 );
-function nevada_wrapper_product_entry_end() {
-	?>
+		<?php
+	}
+	add_action( 'woocommerce_after_single_product_summary', 'nevada_wrapper_product_entry_end', 5 );
+	function nevada_wrapper_product_entry_end() {
+		?>
 	</div>
 	<?php
 }
@@ -66,15 +66,15 @@ function nevada_woocommerce_scripts() {
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
-			font-family: "star";
-			src: url("' . $font_path . 'star.eot");
-			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
-				url("' . $font_path . 'star.woff") format("woff"),
-				url("' . $font_path . 'star.ttf") format("truetype"),
-				url("' . $font_path . 'star.svg#star") format("svg");
-			font-weight: normal;
-			font-style: normal;
-		}';
+		font-family: "star";
+		src: url("' . $font_path . 'star.eot");
+		src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
+		url("' . $font_path . 'star.woff") format("woff"),
+		url("' . $font_path . 'star.ttf") format("truetype"),
+		url("' . $font_path . 'star.svg#star") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}';
 
 	wp_add_inline_style( 'nevada-woocommerce-style', $inline_font );
 }
@@ -82,18 +82,18 @@ function nevada_woocommerce_scripts() {
 add_action( 'woocommerce_before_main_content', 'nevada_archive_wrapper_start', 40 );
 function nevada_archive_wrapper_start(){
 	if ( is_shop() || is_product_category() ) {
-?>
-	<div class="archive_wrapper">
-<?php
-   }
-}
-add_action( 'woocommerce_after_main_content', 'nevada_archive_wrapper_end', 20 );
-function nevada_archive_wrapper_end(){
-	if ( is_shop() || is_product_category() ) {
-?>
-    </div>
-	<?php
-   }
+		?>
+		<div class="archive_wrapper">
+			<?php
+		}
+	}
+	add_action( 'woocommerce_after_main_content', 'nevada_archive_wrapper_end', 20 );
+	function nevada_archive_wrapper_end(){
+		if ( is_shop() || is_product_category() ) {
+			?>
+		</div>
+		<?php
+	}
 }
 
 /*Splitting Subcategoties from Products on Shop Page*/
@@ -111,7 +111,7 @@ function nevada_out_subcategories() {
 add_filter( 'product_cat_class', 'nevada_add_classes_product_cat' );
 function nevada_add_classes_product_cat($classes){
 	$classes[] = '';
-return $classes;
+	return $classes;
 }
 
 
@@ -165,11 +165,11 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'nevada_loop_product_span
 function nevada_loop_product_span_open(){
 	?>
 	<span>
-	<?php
-}
-add_action( 'woocommerce_shop_loop_item_title', 'nevada_loop_product_span_close' , 5);
-function nevada_loop_product_span_close(){
-	?>
+		<?php
+	}
+	add_action( 'woocommerce_shop_loop_item_title', 'nevada_loop_product_span_close' , 5);
+	function nevada_loop_product_span_close(){
+		?>
 	</span>
 	<?php
 }
@@ -198,11 +198,11 @@ add_action( 'woocommerce_before_shop_loop', 'nevada_wrapper_div_archive_start', 
 function nevada_wrapper_div_archive_start() {
 	?>
 	<div class="result_and_form_align">
-	<?php
-}
-add_action( 'woocommerce_before_shop_loop', 'nevada_wrapper_div_archive_end', 35 );
-function nevada_wrapper_div_archive_end() {
-	?>
+		<?php
+	}
+	add_action( 'woocommerce_before_shop_loop', 'nevada_wrapper_div_archive_end', 35 );
+	function nevada_wrapper_div_archive_end() {
+		?>
 	</div>
 	<?php
 }
@@ -211,13 +211,13 @@ add_action( 'woocommerce_before_single_product', 'nevada_wrapper_print_notice_st
 function nevada_wrapper_print_notice_start() {
 	?>
 	<div class="nevada_page">
-	<div class="nevada_page_wrapper">
-	<?php
-}
-add_action( 'woocommerce_before_single_product', 'nevada_wrapper_print_notice_end', 15 );
-function nevada_wrapper_print_notice_end() {
-	?>
-	</div>
+		<div class="nevada_page_wrapper">
+			<?php
+		}
+		add_action( 'woocommerce_before_single_product', 'nevada_wrapper_print_notice_end', 15 );
+		function nevada_wrapper_print_notice_end() {
+			?>
+		</div>
 	</div>
 	<?php
 }
@@ -228,11 +228,11 @@ add_action( 'woocommerce_account_navigation', 'nevada_account_flexbox_start' , 5
 function nevada_account_flexbox_start(){
 	?>
 	<div class="account_flexbox">
-	<?php
-}
-add_action( 'woocommerce_account_content', 'nevada_account_flexbox_end' , 10);
-function nevada_account_flexbox_end(){
-	?>
+		<?php
+	}
+	add_action( 'woocommerce_account_content', 'nevada_account_flexbox_end' , 10);
+	function nevada_account_flexbox_end(){
+		?>
 	</div>
 	<?php
 }
